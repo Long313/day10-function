@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input = parseInt(prompt("Nhập vào bán kính hình tròn"));
+        function circle(radius){
+            let c = radius*2*Math.PI;
+            let s = Math.pow(radius,2)*Math.PI;
+            alert("Chu vi của hình tròn là: "+ c);
+            alert("Diện tích của hình tròn là: "+ s);
+        }
+        circle(input);
+    </script>
+</body>
+</html>

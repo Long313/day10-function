@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi feet và meter</title>
+</head>
+<body>
+    <input id="meter-to-feet"  onchange="meterToFeet(this)" placeholder="Nhập vào meter">
+    <input id="feet-to-meter" onchange="feetToMeter(this)"placeholder="Nhập vào feet">
+    <div id="result"></div>
+    <script>
+        let meter;
+        let feet;
+        let result = document.getElementById("result");
+        // hàm chuyển đổi meter sang feet
+        function meterToFeet(obj){
+           let inputMeter = obj.value
+            feet = 3.279*inputMeter
+            result.innerText = "Giá trị sau khi chuyển từ meter sang feet là: "+ feet;
+        }
+        function feetToMeter(object){
+           let inputFeet = object.value
+            meter = 0.305*inputFeet
+            result.innerText = "Giá trị sau khi chuyển từ feet sang meter là: "+ meter;
+        }
+    </script>
+</body>
+</html>

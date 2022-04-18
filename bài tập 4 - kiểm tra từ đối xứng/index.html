@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt("Nhập vào một từ");
+      function isPalindrom(str) {
+        let arr = str.split("");
+        // console.log(arr);
+        let mid = Math.floor((arr.length - 1) / 2); 
+        // console.log("mid" + mid);
+        let leftArray = [];
+        for (let l = 0; l <= mid; l++) {
+          leftArray.push(arr[l]);
+        }
+        // console.log(leftArray);
+        let rightArray = [];
+        for (let r = arr.length - 1; r > mid; r--) {
+          rightArray.push(arr[r]);
+        }
+        // console.log(rightArray);
+
+        if (leftArray.length > rightArray.length) {
+          for (let i = 0; i < rightArray.length - 1; i++) {
+            if (leftArray[i] != rightArray[i]) {
+              return str + " không phải là một chuỗi Palindrom";
+            }
+          }
+        } else if (leftArray.length == rightArray.length) {
+          for (let j = 0; j < rightArray.length - 1; j++) {
+            if (leftArray[i] != rightArray[i]) {
+              return str + " không phải là một chuỗi Palindrom";
+            }
+          }
+        }
+        return str + " là một chuỗi Palindrom";
+      }
+      console.log(isPalindrom(input));
+    </script>
+  </body>
+</html>
