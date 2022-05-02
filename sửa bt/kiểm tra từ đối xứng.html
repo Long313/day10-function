@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input = prompt("Nhập vào một từ");
+        function back(obj){
+            if(obj.length<2){
+                return input + " là một chuỗi đối xứng";
+            }
+            else {
+                let array =  obj.split("");
+                if(array[0] == array[array.length-1]){
+                    array.shift();
+                    array.pop();
+                    return back(array.join(""));
+                } else {
+                    return input + " không phải là một chuỗi đối xứng";
+                }
+        }
+    }
+    console.log(back(input))
+    </script>
+</body>
+</html>

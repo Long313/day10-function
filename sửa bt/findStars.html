@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let stars = [
+        "Polaris",
+        "Aldebaran",
+        "Deneb",
+        "Vega",
+        "Altair",
+        "Dubhe",
+        "Regulus",
+      ];
+      let equal = [
+        "Ursa Minor",
+        "Tarurus",
+        "Cygnus",
+        "Lyra",
+        "Aquila",
+        "Ursa Major",
+        "Leo",
+      ];
+      let input = prompt("Nhập vào một ngôi sao");
+      find(input);
+      function find(obj) {
+        let i;
+        for (i = 0; i < stars.length; i++) {
+          if (obj.toLowerCase() == stars[i].toLowerCase()) {
+            return alert(
+              "Ngôi sao " + obj + " tương ứng với chòm sao " + equal[i]
+            );
+            break;
+          }
+        }
+        return alert(" không tìm thấy chòm sao tương ứng với sao " + obj);
+      }
+    </script>
+  </body>
+</html>

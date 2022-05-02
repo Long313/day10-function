@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table{
+            border-spacing: 0px;
+            padding: 0px;
+        }
+        .button-name {
+            font-size: 15px;
+            width: 100%;
+            border:none;
+            /* background-color: #f2f2f2; */
+        }
+        .button-name:nth-child(odd){
+            background-color: #f2f2f2;
+        }
+        .button{
+            border: none;
+            background-color: #50af50;
+            color: white;
+            border-radius: 4px;
+        }
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        tr{
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add New Product</h2>
+    <div>
+        <input id='input' placeholder="New Product"></input>
+        <button id="btn" onclick="add()">Add</button>
+    </div>
+    <h2>Display All Product</h2>
+    <div id="result"></div>
+    <script>
+        let input = document.getElementById('input');
+        let product = ['Sting', 'Revive', 'Bò húc', 'Coca-cola', 'Sữa'];
+        let str ='';
+        // console.log(count);
+        function display(a){
+            let count = product.length;
+            str += '<table class="table" id="tab" style="width:30%">';
+            str += '<th>';
+            str += '<td>Product Name</td>';
+            str += '<td></td>';
+            str += '<td>'+count+' product</td>';
+            str +='</th>';
+            for(let i =0; i<product.length;i++){
+                if(i==a){
+                    product[a] = "";
+                    continue;
+                }
+                str += '<tr id="'+i+'">';
+                str += '<td><button class="button-name" onclick="change('+i+')">'+product[i]+'</button></td>';
+                str += '<td><button class="button" onclick="edit('+i+')" size="50">Edit</button>';
+                str += '<td><button class="button" onclick="del('+i+')" size="50">Delete</button>'; 
+                str += '<td></td>';
+                str += '</tr>';
+            }
+            str+='</table>';
+            result.innerHTML = str;
+        }
+        display();
+        function add(){
+            str ="";
+            product.push(input.value);
+            display();
+        }
+        // console.log(product);
+        function change(numb){
+            input.value = product[numb];
+        }
+        function edit(num){
+            // console.log(product[a]);
+            product[num] = input.value;
+            str = "";
+            display();
+        }
+        function del(a){
+            console.log(a);
+            str="";
+            display(a);
+        }
+    </script>
+</body>
+</html>

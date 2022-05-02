@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi meter và feet</title>
+</head>
+<body>
+    <h1>Chuyển đổi met và foot</h1>
+    <div>
+        <input id="met"  placeholder="Met">
+        <span>&#x21C6;</span>
+        <input id="foot"  placeholder="Foot">
+    </div>
+    <div id="result"></div>
+    <script>
+        let result = document.getElementById('result');
+        let met = document.getElementById("met");
+        let foot = document.getElementById("foot");
+        let meter, feet;
+        met.addEventListener('keyup', function(){
+            meter = parseInt(met.value);
+            if(!isNaN(meter) || meter != null){
+            foot.value = meter*3.029;
+            } else {
+                foot.value = "";
+            }
+        })
+        foot.addEventListener('keyup', function(){
+            feet = parseInt(foot.value);
+            if(!isNaN(feet) || feet !=null){
+                met.value = feet*0.305;
+            } else {
+                met.value = ""
+            }
+        } 
+        )
+        
+    </script>
+</body>
+</html>

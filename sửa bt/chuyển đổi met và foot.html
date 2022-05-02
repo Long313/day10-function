@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi meter và feet</title>
+</head>
+<body>
+    <h1>Chuyển đổi met và foot</h1>
+    <div>
+        <input id="met" onkeyup="convert('meter',this)" placeholder="Met">
+        <span>&#x21C6;</span>
+        <input id="foot" onkeyup="convert('foot',this)" placeholder="Foot">
+    </div>
+    <div id="result"></div>
+    <script>
+        let result = document.getElementById('result');
+        function convert(name,obj){
+            let metUnit, feetUnit
+            let meter,foot
+            switch(name){
+                case 'meter':
+                    metUnit = parseInt(obj.value);
+                    foot = metUnit*3.279;
+                result.innerHTML = (isNaN(metUnit)?0:metUnit)+ " meter" + '<span>&#x21C6</span>' + foot + " foot";
+                break;
+                case 'foot':
+                    feetUnit = parseInt(obj.value);
+                    meter = feetUnit*0.305;
+                result.innerHTML= (isNaN(feetUnit)?0:feetUnit) + " foot" + '<span>&#x21C6</span>' +meter + "meter";
+                break;
+            }
+        }
+
+    </script>
+</body>
+</html>
